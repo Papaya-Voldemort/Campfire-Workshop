@@ -1,0 +1,96 @@
+:root {
+  --bg: #101321;
+  --panel: #1b2140;
+  --panel-soft: #232b52;
+  --text: #edf1ff;
+  --muted: #aeb7d8;
+  --accent: #6e8cff;
+  --accent2: #8d6cff;
+  --good: #46d48c;
+  --bad: #ff6f7d;
+  --warn: #f5b042;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #263164 0%, var(--bg) 45%);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+.container { max-width: 980px; margin: 0 auto; padding: 1rem; }
+.panel {
+  background: linear-gradient(180deg, var(--panel-soft), var(--panel));
+  border: 1px solid #3e4a7a;
+  border-radius: 14px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+}
+.hidden { display: none !important; }
+.form-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+label { display: grid; gap: 0.35rem; font-weight: 600; }
+input, select, button {
+  border-radius: 10px;
+  border: 1px solid #55639b;
+  color: var(--text);
+  background: #171d36;
+  padding: 0.55rem 0.65rem;
+}
+button { cursor: pointer; font-weight: 700; }
+.primary { background: linear-gradient(180deg, var(--accent), var(--accent2)); border-color: #6f81c9; }
+.topbar { display: flex; justify-content: space-between; align-items: center; }
+.topbar h2 { margin: 0; }
+.topbar p { margin: 0.2rem 0 0; color: var(--muted); }
+
+#statsGrid { display: grid; gap: 0.45rem; }
+.stat-row {
+  display: grid;
+  grid-template-columns: 95px 1fr 40px;
+  align-items: center;
+  gap: 0.5rem;
+}
+progress { width: 100%; height: 0.8rem; }
+
+.tab-buttons { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+.tab { background: #20284a; }
+.tab.active { border-color: #89a0ff; background: #2b3766; }
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.5rem;
+}
+
+#journal {
+  margin: 0;
+  padding-left: 1rem;
+  max-height: 270px;
+  overflow: auto;
+  color: var(--muted);
+}
+
+.badge { font-size: 0.8rem; padding: 0.1rem 0.45rem; border-radius: 999px; border: 1px solid #59689e; }
+.good { color: var(--good); }
+.bad { color: var(--bad); }
+.warn { color: var(--warn); }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.72);
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+.modal-card {
+  width: min(92vw, 560px);
+  background: #1a2142;
+  border: 1px solid #445389;
+  border-radius: 14px;
+  padding: 1rem;
+}
+.modal-card h3 { margin-top: 0; }
+.choices { display: grid; gap: 0.45rem; }
