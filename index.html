@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Sim</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="creator" class="panel">
+        <h1>Create Your Life</h1>
+        <div class="form-grid">
+          <label>
+            First Name
+            <input id="firstName" type="text" maxlength="18" placeholder="Alex" />
+          </label>
+          <label>
+            Last Name
+            <input id="lastName" type="text" maxlength="18" placeholder="Rivera" />
+          </label>
+          <label>
+            Gender
+            <select id="gender">
+              <option>Female</option>
+              <option>Male</option>
+              <option>Non-binary</option>
+            </select>
+          </label>
+          <label>
+            Country
+            <select id="country"></select>
+          </label>
+        </div>
+        <button id="startLifeBtn" class="primary">Start Life</button>
+      </section>
+
+      <section id="game" class="hidden">
+        <header class="panel topbar">
+          <div>
+            <h2 id="fullName">-</h2>
+            <p id="headline">Age 0 • -</p>
+          </div>
+          <button id="ageUpBtn" class="primary">Age +1</button>
+        </header>
+
+        <section class="panel stats">
+          <h3>Stats</h3>
+          <div id="statsGrid"></div>
+        </section>
+
+        <section class="panel tabs">
+          <div class="tab-buttons">
+            <button data-tab="activities" class="tab active">Activities</button>
+            <button data-tab="school" class="tab">School/Work</button>
+            <button data-tab="relationships" class="tab">Relationships</button>
+            <button data-tab="assets" class="tab">Assets</button>
+          </div>
+          <div id="tabContent"></div>
+        </section>
+
+        <section class="panel">
+          <h3>Journal</h3>
+          <ul id="journal"></ul>
+        </section>
+      </section>
+    </main>
+
+    <div id="eventModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3 id="eventTitle">Life Event</h3>
+        <p id="eventText"></p>
+        <div id="eventChoices" class="choices"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
